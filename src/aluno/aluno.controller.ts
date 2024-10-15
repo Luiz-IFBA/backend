@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, HttpCode, NotFoundException } from '@nestjs/common';
 import { AlunoService } from './aluno.service';
 import { CreateAlunoDto } from './dto/create-aluno.dto';
 import { UpdateAlunoDto } from './dto/update-aluno.dto';
@@ -18,17 +18,23 @@ export class AlunoController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.alunoService.findOne(id);
+  async findOne(@Param('id') id: string) {
+    const aluno = await this.alunoService.findOne(id);
+    if(!aluno) throw new NotFoundException();
+    return aluno;
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateAlunoDto: UpdateAlunoDto) {
-    return this.alunoService.update(id, updateAlunoDto);
+  async update(@Param('id') id: string, @Body() updateAlunoDto: UpdateAlunoDto) {
+    const aluno = await this.alunoService.update(id, updateAlunoDto);
+    if(!aluno) throw new NotFoundException();
+    return aluno;
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.alunoService.remove(id);
+  @HttpCode(204)
+  async remove(@Param('id') id: string) {
+    const aluno = await this.alunoService.remove(id);
+    if(!aluno) throw new NotFoundException();
   }
 }

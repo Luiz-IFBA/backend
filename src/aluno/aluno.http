@@ -21,7 +21,7 @@ Content-Type: application/json
 }
 
 ### update aluno
-PATCH http://localhost:3000/aluno/
+PATCH http://localhost:3000/aluno/aln_Aar2vUK1hG4dH-I-wpfuY
 Content-Type: application/json
 
 {
@@ -38,4 +38,4 @@ Content-Type: application/json
 
 
 ### delete aluno
-DELETE http://localhost:3000/aluno/
+DELETE http://localhost:3000/aluno/aln_EBb9BWpJumvML7XywAofg

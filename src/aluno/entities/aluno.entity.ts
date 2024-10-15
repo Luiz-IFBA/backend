@@ -1,9 +1,10 @@
-import { BeforeInsert, Column, Entity, PrimaryColumn } from "typeorm";
+import { BeforeInsert, Column, Entity, PrimaryColumn, Unique } from "typeorm";
 
 const {nanoid} = require("nanoid");
 
 @Entity('alunos')
 export class Aluno {
+    @Unique(['cpf, email'])
     @PrimaryColumn()
     id: string; //aluno_diwu091283
 
