@@ -1,0 +1,41 @@
+### list aluno
+GET http://localhost:3000/aluno
+
+### get aluno
+GET http://localhost:3000/aluno/
+
+### create aluno
+POST http://localhost:3000/aluno
+Content-Type: application/json
+
+{
+    "cpf": "12345678900",
+    "nome": "Osvaldo Pereira Silva",
+    "telefone": "77912341234",
+    "nascimento": "2000-09-12",
+    "enderecoResidencia": "casa da mãe joana",
+    "enderecoEscola": "bairro ao lado",
+    "turnoEstudo": "Noturno",
+    "email": "1010101010@ifba.edu.br",
+    "codigoTurma": "1234"
+}
+
+### update aluno
+PATCH http://localhost:3000/aluno/
+Content-Type: application/json
+
+{
+    "cpf": "09876543211",
+    "nome": "Antonio Pereira Souza",
+    "telefone": "77943214321",
+    "nascimento": "2001-01-01",
+    "enderecoResidencia": "casa da jurema",
+    "enderecoEscola": "bairro logo a frente",
+    "turnoEstudo": "Matutino",
+    "email": "0101010101@ifba.edu.br",
+    "codigoTurma": "4321"
+}
+
+
+### delete aluno
+DELETE http://localhost:3000/aluno/
