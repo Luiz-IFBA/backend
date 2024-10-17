@@ -9,33 +9,33 @@ POST http://localhost:3000/aluno
 Content-Type: application/json
 
 {
-    "cpf": "12345678900",
+    "cpf": "111111111111",
     "nome": "Osvaldo Pereira Silva",
     "telefone": "77912341234",
     "nascimento": "2000-09-12",
     "enderecoResidencia": "casa da mãe joana",
     "enderecoEscola": "bairro ao lado",
     "turnoEstudo": "Noturno",
-    "email": "1010101010@ifba.edu.br",
+    "email": "111111111111@ifba.edu.br",
     "codigoTurma": "1234"
 }
 
 ### update aluno
-PATCH http://localhost:3000/aluno/aln_Aar2vUK1hG4dH-I-wpfuY
+PATCH http://localhost:3000/aluno/aln_keu9y3W96CeZDD27mLbGG
 Content-Type: application/json
 
 {
-    "cpf": "09876543211",
-    "nome": "Antonio Pereira Souza",
-    "telefone": "77943214321",
-    "nascimento": "2001-01-01",
-    "enderecoResidencia": "casa da jurema",
-    "enderecoEscola": "bairro logo a frente",
-    "turnoEstudo": "Matutino",
-    "email": "0101010101@ifba.edu.br",
-    "codigoTurma": "4321"
+    "cpf": "1111111111",
+    "nome": "Osvaldo Pereira Silva",
+    "telefone": "77900000000",
+    "nascimento": "2000-10-10",
+    "enderecoResidencia": "casa da mãe joana",
+    "enderecoEscola": "bairro ao lado",
+    "turnoEstudo": "Noturno",
+    "email": "1111111111@ifba.edu.br",
+    "codigoTurma": "1234"
 }
 
 
 ### delete aluno
-DELETE http://localhost:3000/aluno/aln_EBb9BWpJumvML7XywAofg
+DELETE http://localhost:3000/aluno/aln_bHLFqlWPGf809KdTfaM37

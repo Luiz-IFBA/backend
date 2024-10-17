@@ -1,10 +1,9 @@
 import { BeforeInsert, Column, Entity, PrimaryColumn, Unique } from "typeorm";
 
 const {nanoid} = require("nanoid");
-
+@Unique(['cpf', 'email']) // Array de strings com os campos separados
 @Entity('alunos')
 export class Aluno {
-    @Unique(['cpf, email'])
     @PrimaryColumn()
     id: string; //aluno_diwu091283
 
@@ -36,7 +35,7 @@ export class Aluno {
     codigoTurma: string;
 
     @BeforeInsert()
-    generateId(){
-        this.id = `aln_${nanoid()}`
+    generateId() {
+        this.id = `aln_${nanoid()}`;
     }
 }

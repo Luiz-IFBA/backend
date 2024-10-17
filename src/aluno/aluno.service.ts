@@ -34,13 +34,24 @@ export class AlunoService {
   async update(id: string, dto: UpdateAlunoDto) {
     const aluno = await this.repository.findOneBy({ id });
     if (!aluno) return null;
-
-    // Verifica se existe outro aluno com o mesmo CPF ou e-mail, excluindo o aluno atual
-    const existingAluno = await this.findByCpfOrEmail(dto.cpf, dto.email);
-    if (existingAluno && existingAluno.id !== aluno.id) {
-      throw new ConflictException('Já existe um aluno com CPF ou e-mail cadastrado.');
+  
+    // Verifica se o CPF foi alterado
+    if (dto.cpf !== aluno.cpf) {
+      // Verifica se existe outro aluno com o mesmo CPF
+      const existingAluno = await this.repository.findOneBy({ cpf: dto.cpf });
+      if (existingAluno) {
+        throw new ConflictException('CPF já cadastrado para outro aluno.');
+      }
     }
-
+  
+    // Verifica se existe outro aluno com o mesmo e-mail, excluindo o aluno atual
+    if (dto.email !== aluno.email) {
+      const existingEmail = await this.repository.findOneBy({ email: dto.email });
+      if (existingEmail) {
+        throw new ConflictException('E-mail já cadastrado para outro aluno.');
+      }
+    }
+  
     this.repository.merge(aluno, dto);
     return this.repository.save(aluno);
   }
