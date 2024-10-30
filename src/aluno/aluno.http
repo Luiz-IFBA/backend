@@ -21,18 +21,18 @@ Content-Type: application/json
 }
 
 ### update aluno
-PATCH http://localhost:3000/aluno/aln_keu9y3W96CeZDD27mLbGG
+PATCH http://localhost:3000/aluno/aln_qS5uOacDrnd8Qik1IWOJX
 Content-Type: application/json
 
 {
-    "cpf": "1111111111",
+    "cpf": "87789987",
     "nome": "Osvaldo Pereira Silva",
     "telefone": "77900000000",
     "nascimento": "2000-10-10",
     "enderecoResidencia": "casa da mãe joana",
     "enderecoEscola": "bairro ao lado",
     "turnoEstudo": "Noturno",
-    "email": "1111111111@ifba.edu.br",
+    "email": "1234@ifba.edu.br",
     "codigoTurma": "1234"
 }
 
